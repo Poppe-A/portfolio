@@ -1,0 +1,96 @@
+.about {
+  width: 100vw;
+  height: 92vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
+  color: rgb(255, 255, 255);
+  padding: 0 3vw;
+  box-sizing: border-box;
+}
+
+.welcome {
+  grid-column: 2;
+  grid-row: 1;
+  text-align: start;
+  border: solid white 2px;
+  padding: 30px;
+}
+
+.welcome h1 {
+  font-size: 3.5rem;
+  margin-top: 0;
+}
+
+.welcome span {
+  font-size: 2rem;
+}
+
+.menuList {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.menuList ul {
+  display: flex;
+  padding: 3% 0;
+  height: 90%;
+
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+li span {
+  font-size: 2rem;
+  position: relative;
+}
+
+.chooseSubject:after {
+  background: none repeat scroll 0 0 transparent;
+  content: '';
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s, opacity 0.3s ease 0s;
+  width: 0;
+  opacity: 0;
+}
+.chooseSubject:hover:after {
+  background: #fff;
+  width: 100%;
+  left: 0;
+  opacity: 1;
+}
+
+.underline:after {
+  bottom: 0;
+  content: '';
+  opacity: 1;
+
+  display: block;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s, opacity 0.3s ease 0s;
+  width: 100%;
+}
+.aboutText {
+  grid-column: 1/ 3;
+  grid-row: 2;
+  padding: 3vh 5vw;
+  display: flex;
+  align-items: center;
+}
+
+.arrow-left {
+  width: 0;
+  height: 0;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+
+  border-right: 60px solid rgb(59, 59, 59);
+}

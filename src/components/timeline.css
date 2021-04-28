@@ -1,0 +1,12 @@
+.no-scrollbar {
+  scrollbar-width: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+.timelineContainer {
+  -ms-overflow-style: none;
+
+  height: 27rem;
+}
