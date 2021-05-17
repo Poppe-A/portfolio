@@ -3,8 +3,11 @@ import './timeline.css';
 
 const Timeline = () => {
   return (
-    <div className='timelineAndDetailContainer w-full h-3/4 flex justify-between pl-12 pr-44'>
-      <div className='timelineContainer w-8/12 overflow-scroll .no-scrollbar'>
+    <div className='timelineAndDetailContainer w-full h-3/4 flex justify-center '>
+      <div
+        className='timelineContainer w-8/12 overflow-scroll .no-scrollbar'
+        onScroll={(e) => console.log('scroll e', e)}
+      >
         <div className='relative  '>
           <div className='border-2-2 absolute border-grey-400  h-full border left-2/4'></div>
           {/* right timeline*/}
@@ -59,8 +62,9 @@ const Timeline = () => {
               </h3>
               <h4 className='mb-3'>2018 - Chateau de Vitré</h4>
               <p className='text-sm leading-snug tracking-wide text-gray-900 text-opacity-100'>
-                - Design et réalisation des systèmes électroniques de l'escape
-                game - Programmation arduino et raspberry - Vidéo et son
+                - Design et réalisation des systèmes électroniques et jeux de
+                l'escape game - Programmation arduino et raspberry - Vidéo et
+                son
               </p>
             </div>
           </div>
@@ -118,16 +122,6 @@ const Timeline = () => {
               </p>
             </div>
           </div>
-        </div>
-      </div>
-      <div className='legend flex flex-col justify-between py-20 text-2xl'>
-        <div className='color1 flex flex-row items-center'>
-          <div className='w-4 h-4 bg-white mr-6'></div>
-          <p>Studies</p>
-        </div>
-        <div className='color1 flex flex-row items-center'>
-          <div className='w-4 h-4 bg-white mr-6'></div>
-          <p>Experiences</p>
         </div>
       </div>
     </div>

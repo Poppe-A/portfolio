@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Burger from 'hamburger-react';
+import { NavLink, useLocation } from 'react-router-dom';
+
 import './Header.css';
 
 const Header = () => {
@@ -23,6 +25,7 @@ const Header = () => {
     }
   };
 
+  console.log(useLocation());
   return (
     <div className='header'>
       <nav className={isOpen ? 'show' : 'noShow'}>
@@ -39,9 +42,43 @@ const Header = () => {
             landOnPage ? 'startState' : textVisible ? 'showText' : 'noShowText'
           }`}
         >
-          <li>About</li>
-          <li>Projets</li>
-          <li>Contact</li>
+          <li>
+            <NavLink
+              className={
+                useLocation().pathname === '/' ? 'textSelected' : 'textToHover'
+              }
+              exact
+              to='/'
+            >
+              About
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={
+                useLocation().pathname === '/projets'
+                  ? 'textSelected'
+                  : 'textToHover'
+              }
+              exact
+              to='/projets'
+            >
+              Projets
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={
+                useLocation().pathname === '/contact'
+                  ? 'textSelected'
+                  : 'textToHover'
+              }
+              exact
+              to='/contact'
+            >
+              Contact
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </div>

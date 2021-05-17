@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import Me from './AboutText/MeMyselfAndI';
+import Me from './MeMyselfAndI';
 import Timeline from './Timeline';
+import Stack from './Stack';
 
 const About = () => {
   const [textNumber, setTextNumber] = useState(null);
@@ -13,7 +14,7 @@ const About = () => {
       case 1:
         return <Timeline />;
       case 2:
-        return 'olalalalallal';
+        return <Stack />;
       default:
         return <div className='text-6xl'>Welcome to my Portfolio !</div>;
     }
@@ -60,16 +61,16 @@ const About = () => {
           </ul>
         </div>
         <div className='titleContainer w-2/6'>
-          <h1 className='text-4xl border-4 border-red-700 text-justify	p-6 text'>
+          <h1 className='text-4xl border-4 border-red-700 text-justify p-6 text'>
             Hi ! I'm <span className='text-red-700'>A</span>ntoine and I'm a Web
             developper
           </h1>
         </div>
       </div>
-      <div
+      {/* <div
         id='separator'
-        className='w-5/12 mt-16 border-t-2 border-white'
-      ></div>
+        className='w-5/12 mt-16 border-t-2 border-gray-500'
+      ></div> */}
 
       <div className='aboutInfosContainer w-full flex justify-center items-center flex-grow'>
         {textToRender()}

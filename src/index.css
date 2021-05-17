@@ -45,7 +45,7 @@ code {
   opacity: 1;
 }
 
-.textSelected:after {
+.textSelected::after {
   content: '';
   opacity: 1;
 

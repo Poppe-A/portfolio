@@ -1,0 +1,10 @@
+.ProjectTile {
+  width: 450px;
+  min-width: 550px;
+  margin-right: 10%;
+  border: solid 1px white;
+}
+
+.content {
+  height: 200px;
+}
