@@ -1,11 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Header from '../components/Header';
 import About from '../components/AboutComponents/About';
 import Contact from '../components/Contact';
-
 import Projects from '../components/ProjectsComponents/Projects';
+import Header from '../components/Header';
 
 const Portfolio = () => {
   return (
@@ -24,10 +23,6 @@ const Portfolio = () => {
           </Route>
         </Switch>
       </Router>
-      {/* <div className='flex justify-center '>
-        <FooterItem img={githubImg} url='https://github.com/Poppe-A' round />
-        <div className='w-16' />
-      </div> */}
     </div>
   );
 };

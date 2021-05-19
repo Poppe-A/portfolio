@@ -3,18 +3,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'),
+    url(./assets/fonts/Montserrat-Regular.ttf) format('truetype');
+}
+
 html,
 body {
   height: 100%;
   overflow: hidden;
+  font-family: Montserrat;
 }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto', sans-serif;
 }
 
 #root {
@@ -26,6 +34,7 @@ code {
     monospace;
 }
 
+/*underline menu animation*/
 .textToHover::after {
   background: none repeat scroll 0 0 transparent;
   content: '';
@@ -56,4 +65,21 @@ code {
   background: #fff;
   transition: width 0.3s ease 0s, left 0.3s ease 0s, opacity 0.3s ease 0s;
   width: 100%;
+}
+
+/*CSS transition*/
+
+.my-node-enter {
+  opacity: 0;
+}
+.my-node-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.my-node-exit {
+  opacity: 1;
+}
+.my-node-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
 }

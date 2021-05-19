@@ -8,3 +8,16 @@
 .content {
   height: 200px;
 }
+
+@media (max-width: 768px) {
+  .ProjectTile {
+    width: 270px;
+    min-width: 270px;
+    margin-right: 5%;
+    border: solid 1px white;
+  }
+
+  .content {
+    height: 200px;
+  }
+}

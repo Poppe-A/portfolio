@@ -6,12 +6,14 @@ import mailImg from '../assets/images/at.png';
 export default function Contact() {
   const [textToShow, setTextToShow] = useState(' ');
   return (
-    <div className='w-full flex flex-col justify-between items-center flex-grow text-white py-16'>
-      <div className='text-6xl border-4 border-white p-6'>Me contacter</div>
+    <div className='w-full flex flex-col justify-between items-center flex-grow text-white pt-8 md:pt-16'>
+      <div className='text-3xl md:text-6xl border-2 md:border-4 border-white p-2 md:p-6'>
+        Me contacter
+      </div>
       <div className='w-full flex justify-evenly'>
-        <div className='transform transition duration-500 hover:scale-150'>
+        <div className='transform transition duration-500 hover:scale-125'>
           <img
-            className='h-20'
+            className='h-14 md:h-20'
             src={phoneImg}
             alt={phoneImg}
             onClick={() => {
@@ -19,9 +21,9 @@ export default function Contact() {
             }}
           />
         </div>
-        <div className='transform transition duration-500 hover:scale-150'>
+        <div className='transform transition duration-500 hover:scale-125'>
           <img
-            className='h-20'
+            className='h-14 md:h-20'
             src={mailImg}
             alt={mailImg}
             onClick={() => {
@@ -29,9 +31,9 @@ export default function Contact() {
             }}
           />
         </div>
-        <div className='transform transition duration-500 hover:scale-150'>
+        <div className='transform transition duration-500 hover:scale-125'>
           <img
-            className='h-20'
+            className='h-14 md:h-20'
             src={linkedinImg}
             alt={linkedinImg}
             onClick={() =>
@@ -44,7 +46,7 @@ export default function Contact() {
         </div>
       </div>
 
-      <div className='h-20 text-5xl'>{textToShow}</div>
+      <div className='h-20 text-2xl md:text-5xl'>{textToShow}</div>
     </div>
   );
 }

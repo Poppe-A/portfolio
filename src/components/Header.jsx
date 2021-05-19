@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { isMobile } from 'react-device-detect';
 import Burger from 'hamburger-react';
 import { NavLink, useLocation } from 'react-router-dom';
 
@@ -25,14 +26,15 @@ const Header = () => {
     }
   };
 
-  console.log(useLocation());
+  console.log('isMobile', isMobile);
+  const size = isMobile ? 30 : 48;
   return (
     <div className='header'>
       <nav className={isOpen ? 'show' : 'noShow'}>
         <div className='burgerContainer'>
           <Burger
             class='burger'
-            size={48}
+            size={size}
             toggled={isOpen}
             toggle={() => displayNav()}
           />
@@ -50,7 +52,7 @@ const Header = () => {
               exact
               to='/'
             >
-              About
+              <span>Parcours</span>
             </NavLink>
           </li>
           <li>

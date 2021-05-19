@@ -5,8 +5,14 @@
   display: none;
 }
 
-.timelineContainer {
+.fixedSizeContent {
   -ms-overflow-style: none;
 
   height: 27rem;
+}
+
+@media (max-width: 768px) {
+  .fixedSizeContent {
+    height: 20rem;
+  }
 }

@@ -12,7 +12,6 @@ nav {
   display: flex;
   justify-content: space-between;
   width: 60px;
-  /* transition: width 0.5s ease-in-out, border-radius 0.5s ease-in-out; */
 }
 
 .show {
@@ -49,6 +48,15 @@ nav ul {
 
 li {
   list-style: none;
+}
+
+@media (max-width: 768px) {
+  .header {
+    font-size: 1rem;
+  }
+  nav ul {
+    width: 65vw;
+  }
 }
 
 @keyframes navIn {

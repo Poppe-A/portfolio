@@ -11,38 +11,38 @@ import tailwindImg from '../../assets/images/tailwind.png';
 
 const Stack = () => {
   return (
-    <div className='w-full h-3/4 px-36 text-center flex flex-col justify-evenly'>
+    <div className='w-full h-4/5 px-8 md:px-36 text-center flex flex-col justify-evenly'>
       {/* <span className='text-3xl'> - Je travaille avec - </span> */}
-      <ul className='w-full flex justify-between items-center'>
+      <ul className='w-full flex justify-between items-center flex-wrap	h-1/2 mb-10'>
         <li>
-          <img src={htmlImg} alt={htmlImg} className='h-24' />
+          <img src={htmlImg} alt={htmlImg} className='h-12 md:h-24' />
         </li>
         <li>
-          <img src={cssImg} alt={cssImg} className='h-24' />
+          <img src={cssImg} alt={cssImg} className='h-12 md:h-24' />
         </li>
         <li>
-          <img src={jsImg} alt={jsImg} className='h-24' />
+          <img src={jsImg} alt={jsImg} className='h-14 md:h-24' />
         </li>
         <li>
-          <img src={reactImg} alt={reactImg} className='h-24' />
+          <img src={gitImg} alt={gitImg} className='h-8 md:h-12' />
         </li>
         <li>
-          <img src={nodeImg} alt={nodeImg} className='h-24' />
+          <img src={reactImg} alt={reactImg} className='h-12 md:h-24' />
         </li>
         <li>
-          <img src={gitImg} alt={gitImg} className='h-16' />
+          <img src={nodeImg} alt={nodeImg} className='h-12 md:h-24' />
         </li>
       </ul>
       {/* <span className='text-2xl'>- J'ai des notions sur -</span> */}
-      <ul className='w-full flex justify-evenly items-center'>
+      <ul className='w-full flex justify-evenly items-center flex-wrap h-1/2'>
         <li>
-          <img src={sqlImg} alt={sqlImg} className='h-14' />
+          <img src={sqlImg} alt={sqlImg} className='h-12 md:h-12' />
         </li>
         <li>
-          <img src={firebaseImg} alt={firebaseImg} className='h-10' />
+          <img src={firebaseImg} alt={firebaseImg} className='h-8 md:h-10' />
         </li>
         <li>
-          <img src={tailwindImg} alt={tailwindImg} className='h-10' />
+          <img src={tailwindImg} alt={tailwindImg} className='h-8 md:h-10' />
         </li>
       </ul>
     </div>
