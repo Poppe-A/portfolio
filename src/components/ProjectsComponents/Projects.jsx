@@ -6,9 +6,9 @@ import metronomeImg from '../../assets/images/Metronome.png';
 import notesGenImg from '../../assets/images/NotesGen.png';
 import burgerImg from '../../assets/images/burger.png';
 import spiritedGuysImg from '../../assets/images/4spirited.png';
-import biclooImg from '../../assets/images/bicloo.png';
-import muskImg from '../../assets/images/musk.png';
-import blackjackImg from '../../assets/images/blackjack.png';
+import biclooImg from '../../assets/images/bicloo.jpg';
+import muskImg from '../../assets/images/musk.jpg';
+import blackjackImg from '../../assets/images/blackjack.jpg';
 
 const Projects = () => {
   const projects = [
