@@ -4,6 +4,8 @@ import Me from './MeMyselfAndI';
 import Timeline from './Timeline';
 import Stack from './Stack';
 import { CSSTransition } from 'react-transition-group';
+import Axios from 'axios';
+var fileDownload = require('js-file-download');
 
 const About = () => {
   const [textNumber, setTextNumber] = useState(null);
@@ -48,6 +50,15 @@ const About = () => {
       setInProp(true);
     }, 200);
   };
+
+  const handleDownload = () => {
+    Axios.get('http://146.59.158.219:9000', {
+      responseType: 'blob',
+    }).then((res) => {
+      fileDownload(res.data, 'Poppe_CV.pdf');
+    });
+  };
+
   return (
     <div className='text-white flex flex-col items-center justify-between flex-grow mt-8 md:mt-14'>
       <div
@@ -93,7 +104,9 @@ const About = () => {
             Je suis <span className='text-testColor-light'>A</span>ntoine,
             développeur Web
           </h1>
-          <span className='text-center underline'>Télécharger mon CV</span>
+          <span className='text-center underline' onClick={handleDownload}>
+            Télécharger mon CV
+          </span>
         </div>
       </div>
 
