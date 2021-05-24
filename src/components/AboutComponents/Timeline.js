@@ -1,13 +1,16 @@
 import React from 'react';
 import './timeline.css';
+import CV from './CV';
+import { isMobile } from 'react-device-detect';
 
 const Timeline = () => {
   return (
     <div className='w-full h-3/4 flex justify-center '>
-      <div
-        className='fixedSizeContent w-11/12 md:w-8/12 overflow-scroll .no-scrollbar'
-        onScroll={(e) => console.log('scroll e', e)}
-      >
+      <div className='fixedSizeContent w-11/12 md:w-8/12 overflow-scroll .no-scrollbar'>
+        <div className='w-full flex justify-center mb-8'>
+          {/* {isMobile ? <CV /> : null} */}
+        </div>
+
         <div className='relative  '>
           <div className='border-2-2 absolute border-grey-400  h-full border left-2/4'></div>
           {/* left timeline*/}

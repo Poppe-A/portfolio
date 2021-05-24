@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
 import Me from './MeMyselfAndI';
 import Timeline from './Timeline';
 import Stack from './Stack';
 import { CSSTransition } from 'react-transition-group';
-import Axios from 'axios';
-var fileDownload = require('js-file-download');
+import CV from './CV';
+import { isMobile } from 'react-device-detect';
 
 const About = () => {
   const [textNumber, setTextNumber] = useState(null);
@@ -51,14 +50,6 @@ const About = () => {
     }, 200);
   };
 
-  const handleDownload = () => {
-    Axios.get('http://metronomebackend.apoppe.com', {
-      responseType: 'blob',
-    }).then((res) => {
-      fileDownload(res.data, 'Poppe_CV.pdf');
-    });
-  };
-
   return (
     <div className='text-white flex flex-col items-center justify-between flex-grow mt-8 md:mt-14'>
       <div
@@ -101,18 +92,17 @@ const About = () => {
         </div>
         <div className='titleContainer flex flex-col md:w-2/6 order-first md:order-last'>
           <h1 className='text-xl md:text-4xl border-testColor border-2 md:border-4 text-center p-3 md:p-6 mb-4 md:mt-0 text'>
-            Je suis <span className='text-testColor-light'>A</span>ntoine,
-            développeur Web
+            Je suis <span className={'text-testColor-light'}>A</span>
+            ntoine, développeur Web
           </h1>
-          <span className='text-center underline' onClick={handleDownload}>
-            Télécharger mon CV
-          </span>
+          {isMobile ? null : <CV />}
         </div>
       </div>
 
       <div className='aboutInfosContainer w-full flex justify-center items-center flex-grow'>
         {textToRender()}
       </div>
+      {isMobile ? <CV /> : null}
     </div>
   );
 };
