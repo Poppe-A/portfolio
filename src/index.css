@@ -42,13 +42,13 @@ code {
   height: 2px;
   left: 50%;
   position: relative;
-  background: #fff;
+  background: #93c5fd;
   transition: width 0.3s ease 0s, left 0.3s ease 0s, opacity 0.3s ease 0s;
   width: 0;
   opacity: 0;
 }
 .textToHover:hover::after {
-  background: #fff;
+  background: #93c5fd;
   width: 100%;
   left: 0;
   opacity: 1;
@@ -62,7 +62,7 @@ code {
   height: 2px;
   left: 0;
   position: relative;
-  background: #fff;
+  background: #93c5fd;
   transition: width 0.3s ease 0s, left 0.3s ease 0s, opacity 0.3s ease 0s;
   width: 100%;
 }

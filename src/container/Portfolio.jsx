@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 
 import About from '../components/AboutComponents/About';
 import Contact from '../components/Contact';
@@ -9,7 +9,7 @@ import Header from '../components/Header';
 const Portfolio = () => {
   return (
     <div className='portfolio h-full w-full bg-black flex flex-col justify-between pb-4'>
-      <Router>
+      <HashRouter>
         <Header />
         <Switch>
           <Route exact path='/projets'>
@@ -22,7 +22,7 @@ const Portfolio = () => {
             <About />
           </Route>
         </Switch>
-      </Router>
+      </HashRouter>
     </div>
   );
 };

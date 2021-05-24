@@ -21,7 +21,9 @@ const ProjectTile = ({ project }) => {
     >
       <h3 className='text-base md:text-2xl mb-2 md:mb-8'>{project.title}</h3>
       <div
-        className='content h-1/4 md:h-1/2'
+        className={`content h-1/4 md:h-1/2 ${
+          project.border ? 'border-2 border-white' : ''
+        }`}
         style={{
           backgroundImage: `url(${project.img})`,
           backgroundPosition: 'center',
@@ -36,9 +38,15 @@ const ProjectTile = ({ project }) => {
           } transition-opacity`}
         >
           {project.summary}
-          <button className='text-sm md:text-base border-2 border-white mt-4 md:mt-8 p-1 md:p-2 transition duration-300 ease-in-out hover:bg-white hover:text-black '>
-            DECOUVRIR LE PROJET
-          </button>
+          {project.link ? (
+            <button
+              className='text-sm md:text-base border-2 border-white mt-4 md:mt-8 p-1 md:p-2 transition duration-300 ease-in-out hover:bg-white hover:text-black '
+              // onClick={() => window.open(project.link, '_blank')}
+              onClick={() => window.open(`http://${project.link}`, '_blank')}
+            >
+              DECOUVRIR LE PROJET
+            </button>
+          ) : null}
         </div>
       </div>
       <div className='flex flex-wrap mt-2 md:mt-8'>

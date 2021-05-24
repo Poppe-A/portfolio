@@ -33,7 +33,8 @@ const About = () => {
         return (
           <CSSTransition in={inProp} timeout={500} classNames='my-node'>
             <div className='text-center px-4 text-3xl md:text-6xl'>
-              Welcome to my Portfolio !
+              Bienvenue sur mon <span className='text-testColor'>P</span>
+              ortfolio !
             </div>
           </CSSTransition>
         );
@@ -62,7 +63,7 @@ const About = () => {
                   clickOnMenu(0);
                 }}
               >
-                A propos de moi
+                À propos de moi
               </span>
             </li>
             <li className='mb-2 md:mt-0'>
@@ -72,7 +73,7 @@ const About = () => {
                   clickOnMenu(1);
                 }}
               >
-                Etudes et experiences
+                Études et expériences
               </span>
             </li>
             <li className='mb-2 md:mt-0'>
@@ -88,8 +89,9 @@ const About = () => {
           </ul>
         </div>
         <div className='titleContainer flex flex-col md:w-2/6 order-first md:order-last'>
-          <h1 className='text-xl md:text-4xl border-2 md:border-4 text-center p-3 md:p-6 mb-4 md:mt-0 text'>
-            Je suis Antoine, développeur Web
+          <h1 className='text-xl md:text-4xl border-testColor border-2 md:border-4 text-center p-3 md:p-6 mb-4 md:mt-0 text'>
+            Je suis <span className='text-testColor-light'>A</span>ntoine,
+            développeur Web
           </h1>
           <span className='text-center underline'>Télécharger mon CV</span>
         </div>
