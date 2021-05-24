@@ -52,7 +52,7 @@ const About = () => {
   };
 
   const handleDownload = () => {
-    Axios.get('http://146.59.158.219:9000', {
+    Axios.get('http://metronomebackend.apoppe.com', {
       responseType: 'blob',
     }).then((res) => {
       fileDownload(res.data, 'Poppe_CV.pdf');
