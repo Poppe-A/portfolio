@@ -26,7 +26,6 @@ const Header = () => {
     }
   };
 
-  console.log('isMobile', isMobile);
   const size = isMobile ? 30 : 48;
   return (
     <div className='header'>

@@ -19,7 +19,7 @@
 }
 
 .triangle:hover {
-  border-top: 70px solid green;
+  border-top: 70px solid rgba(6, 95, 70);
   transition: border-color 0.2s;
 }
 
@@ -36,7 +36,7 @@
   }
 
   .triangle:hover {
-    border-top: 40px solid green;
+    border-top: 40px solid rgba(6, 95, 70);
     transition: border-color 0.2s;
   }
 }
