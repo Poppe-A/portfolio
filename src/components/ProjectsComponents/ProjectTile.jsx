@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './ProjectTile.css';
-const ProjectTile = ({ project }) => {
+import { isMobile } from 'react-device-detect';
+const ProjectTile = ({ project, index }) => {
   const [isSummary, setIsSummary] = useState(false);
 
   // const content = isSummary ? (
@@ -8,10 +9,11 @@ const ProjectTile = ({ project }) => {
   // ) : (
   //   <img className='content' src={project.img} alt={project.img} />
   // );
-
   return (
     <div
-      className='ProjectTile flex flex-col items-center justify-between p-4 md:p-8 mr-8 text-white h-full'
+      className={`ProjectTile ${
+        !isMobile && index % 2 !== 0 ? 'transform translate-y-2/4' : ''
+      } flex flex-col items-center justify-between w-11/12 md:w-5/12 border-2 border-white p-4 mb-16 md:p-8 text-white`}
       onMouseEnter={() => {
         setIsSummary(true);
       }}
@@ -19,10 +21,12 @@ const ProjectTile = ({ project }) => {
         setIsSummary(false);
       }}
     >
-      <h3 className='text-base md:text-2xl mb-2 md:mb-8'>{project.title}</h3>
+      <h3 className='text-xl text-green-600 md:text-3xl mb-2 md:mb-8'>
+        {project.title}
+      </h3>
       <div
         className={`content h-1/4 md:h-1/2 ${
-          project.border ? 'border-2 border-white' : ''
+          project.border ? 'border-2 border-gray-600' : ''
         }`}
         style={{
           backgroundImage: `url(${project.img})`,
@@ -32,15 +36,24 @@ const ProjectTile = ({ project }) => {
           backgroundColor: 'transparent',
         }}
       >
+        {!isSummary && isMobile ? (
+          <div className='w-full'>
+            <div className='w-full flex justify-center mt-4'>
+              Cliquez pour plus d'info
+            </div>
+          </div>
+        ) : null}
+
         <div
           className={`w-full h-full flex flex-col justify-center items-center text-xs md:text-base text-center	bg-black	bg-opacity-70 transition duration-300 ease-in-out ${
             isSummary ? 'opacity-100' : 'opacity-0'
           } transition-opacity`}
         >
           {project.summary}
+
           {project.link ? (
             <button
-              className='text-sm md:text-base border-2 border-white mt-4 md:mt-8 p-1 md:p-2 transition duration-300 ease-in-out hover:bg-white hover:text-black '
+              className='text-sm md:text-base border-2 border-white mt-4 md:mt-8 p-2 transition duration-300 ease-in-out hover:bg-white hover:text-black '
               // onClick={() => window.open(project.link, '_blank')}
               onClick={() => window.open(`http://${project.link}`, '_blank')}
             >
@@ -49,11 +62,11 @@ const ProjectTile = ({ project }) => {
           ) : null}
         </div>
       </div>
-      <div className='flex flex-wrap mt-2 md:mt-8'>
+      <div className='text-green-600 justify-center font-bold	flex flex-wrap mt-2 md:mt-8'>
         {project.stack.map((techno, index) => (
           <span
             key={index}
-            className='text-xs md:text-base mr-2'
+            className='text-base md:text-lg mr-2'
           >{`${techno.toUpperCase()} ${
             index !== project.stack.length - 1 ? ' - ' : ''
           }`}</span>

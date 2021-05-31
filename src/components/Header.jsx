@@ -46,22 +46,22 @@ const Header = () => {
         >
           <li>
             <NavLink
-              className={
+              className={`menuText ${
                 useLocation().pathname === '/' ? 'textSelected' : 'textToHover'
-              }
+              }`}
               exact
               to='/'
             >
-              <span>Parcours</span>
+              <span className='whitespace-nowrap'>A propos</span>
             </NavLink>
           </li>
           <li>
             <NavLink
-              className={
+              className={`menuText ${
                 useLocation().pathname === '/projets'
                   ? 'textSelected'
                   : 'textToHover'
-              }
+              }`}
               exact
               to='/projets'
             >
@@ -70,11 +70,11 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              className={
+              className={`menuText ${
                 useLocation().pathname === '/contact'
                   ? 'textSelected'
                   : 'textToHover'
-              }
+              }`}
               exact
               to='/contact'
             >

@@ -10,11 +10,12 @@
     url(./assets/fonts/Montserrat-Regular.ttf) format('truetype');
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Palanquin:wght@100;300;400;700&display=swap');
 html,
 body {
   height: 100%;
   overflow: hidden;
-  font-family: Montserrat;
+  font-family: Lexend Deca;
 }
 body {
   margin: 0;
@@ -23,6 +24,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Roboto', sans-serif;
+  font-family: Palanquin;
+  font-weight: 300;
 }
 
 #root {
@@ -42,19 +45,42 @@ code {
   height: 2px;
   left: 50%;
   position: relative;
-  background: #93c5fd;
+  background: white;
   transition: width 0.3s ease 0s, left 0.3s ease 0s, opacity 0.3s ease 0s;
   width: 0;
   opacity: 0;
 }
 .textToHover:hover::after {
-  background: #93c5fd;
+  background: white;
   width: 100%;
   left: 0;
   opacity: 1;
 }
 
-.textSelected::after {
+.menuText {
+  color: white;
+  transition: color 0.3s;
+}
+
+.menuText::after {
+  background: none repeat scroll 0 0 transparent;
+  content: '';
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: relative;
+  background: white;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s, opacity 0.3s ease 0s;
+  width: 0;
+  opacity: 0;
+}
+
+.textSelected {
+  color: #059669;
+  transition: color 0.3s;
+}
+
+/* .textSelected::after {
   content: '';
   opacity: 1;
 
@@ -62,10 +88,10 @@ code {
   height: 2px;
   left: 0;
   position: relative;
-  background: #93c5fd;
+  background: #065f46;
   transition: width 0.3s ease 0s, left 0.3s ease 0s, opacity 0.3s ease 0s;
   width: 100%;
-}
+} */
 
 /*CSS transition*/
 

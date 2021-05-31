@@ -8,41 +8,77 @@ import gitImg from '../../assets/images/git.png';
 import sqlImg from '../../assets/images/mySql.png';
 import firebaseImg from '../../assets/images/firebase.png';
 import tailwindImg from '../../assets/images/tailwind.png';
+import { isMobile } from 'react-device-detect';
 
 const Stack = () => {
   return (
-    <div className='w-full h-4/5 px-8 md:px-36 text-center flex flex-col justify-evenly'>
-      {/* <span className='text-3xl'> - Je travaille avec - </span> */}
-      <ul className='w-full flex justify-between items-center flex-wrap	h-1/2 mb-10'>
-        <li>
-          <img src={htmlImg} alt={htmlImg} className='h-12 md:h-24' />
+    <div className='w-full h-3/5 px-4 md:px-32 text-center flex flex-col justify-between'>
+      <ul className='w-full h-2/5 flex justify-between items-center flex-wrap'>
+        <li className={isMobile ? '' : ''}>
+          <img
+            src={htmlImg}
+            alt={htmlImg}
+            className='h-12 md:h-24 transition duration-300 transform hover:scale-125'
+          />
         </li>
         <li>
-          <img src={cssImg} alt={cssImg} className='h-12 md:h-24' />
+          <img
+            src={cssImg}
+            alt={cssImg}
+            className='h-12 md:h-24 transition duration-300 transform hover:scale-125'
+          />
         </li>
         <li>
-          <img src={jsImg} alt={jsImg} className='h-14 md:h-24' />
+          <img
+            src={jsImg}
+            alt={jsImg}
+            className='h-14 md:h-24 transition duration-300 transform hover:scale-125'
+          />
         </li>
         <li>
-          <img src={gitImg} alt={gitImg} className='h-8 md:h-12' />
+          <img
+            src={gitImg}
+            alt={gitImg}
+            className='h-8 md:h-12 transition duration-300 transform hover:scale-125 '
+          />
         </li>
         <li>
-          <img src={reactImg} alt={reactImg} className='h-12 md:h-24' />
+          <img
+            src={reactImg}
+            alt={reactImg}
+            className='h-12 md:h-24 transition duration-300 transform hover:scale-125'
+          />
         </li>
         <li>
-          <img src={nodeImg} alt={nodeImg} className='h-12 md:h-24' />
+          <img
+            src={nodeImg}
+            alt={nodeImg}
+            className='h-12 md:h-24  transition duration-300 transform hover:scale-125'
+          />
         </li>
       </ul>
       {/* <span className='text-2xl'>- J'ai des notions sur -</span> */}
-      <ul className='w-full flex justify-evenly items-center flex-wrap h-1/2'>
+      <ul className='w-full h-2/5 flex justify-evenly items-center flex-wrap'>
         <li>
-          <img src={sqlImg} alt={sqlImg} className='h-12 md:h-12' />
+          <img
+            src={sqlImg}
+            alt={sqlImg}
+            className='h-12 md:h-12 transition duration-300 transform hover:scale-125'
+          />
         </li>
         <li>
-          <img src={firebaseImg} alt={firebaseImg} className='h-8 md:h-10' />
+          <img
+            src={firebaseImg}
+            alt={firebaseImg}
+            className='h-8 md:h-10 transition duration-300 transform hover:scale-125'
+          />
         </li>
         <li>
-          <img src={tailwindImg} alt={tailwindImg} className='h-8 md:h-10' />
+          <img
+            src={tailwindImg}
+            alt={tailwindImg}
+            className='h-8 md:h-10 transition duration-300 transform hover:scale-125'
+          />
         </li>
       </ul>
     </div>

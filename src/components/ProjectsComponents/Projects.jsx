@@ -11,6 +11,8 @@ import biclooImg from '../../assets/images/bicloo.jpg';
 import muskImg from '../../assets/images/musk.jpg';
 import blackjackImg from '../../assets/images/blackjack.jpg';
 
+import './Projects.css';
+
 const Projects = () => {
   const projects = [
     {
@@ -20,16 +22,16 @@ const Projects = () => {
         "Vous êtes actuellement sur ce site ! Je l'ai créé en guise de petit projet supplémentaire, pour compléter un CV plus traditionnel, et mettre en valeur mes projets. Ce site, ainsi que tout mes projets sont hebergés sur mon VPS.",
       stack: ['React', 'Tailwind', 'Apache'],
       border: true,
-      id: 12,
+      id: 0,
     },
     {
       title: 'Seek for Musk',
       img: muskImg,
       summary:
-        "Appli réalisée en équiper en 24h lors d'un hackathon à la Wild Code School. Le sujet étant l'espace, nous avons fait le choix d'un jeu absurde dans lequel il faut trouver Elon Musk qui s'est caché dans la galaxie. Pour cela on visite des planètes (à condition d'avoir assez d'essence), jusqu'à trouver le bosse final Elon Musk. Version Desktop uniquement",
+        "Appli réalisée en équipe en 24h lors d'un hackathon à la Wild Code School. Le sujet étant l'espace, nous avons fait le choix d'un jeu absurde dans lequel il faut trouver Elon Musk qui s'est caché dans la galaxie. Pour cela on visite des planètes (à condition d'avoir assez d'essence), jusqu'à trouver le bosse final Elon Musk. Version Desktop uniquement",
       stack: ['React', 'parallax', 'P5.js'],
       link: 'seekformusk.apoppe.com',
-      id: 5,
+      id: 1,
     },
     {
       title: 'BiclooApp',
@@ -39,17 +41,17 @@ const Projects = () => {
       stack: ['React', 'leaflet', 'firebase', 'tailwind'],
       link: 'biclooapp.apoppe.com',
 
-      id: 4,
+      id: 2,
     },
     {
       title: 'My setlist  metronome',
       img: metronomeImg,
       summary:
-        "Metronome visuel pour mon groupe, cliquer sur un morceau pour le lancer. Possibilité d'édition et de création de morceau grace à un backend",
+        "Metronome visuel pour mon groupe, cliquez sur un morceau pour le lancer. Possibilité d'édition et de création de morceau grace à un backend",
       stack: ['React', 'node.js', 'mySql'],
       link: 'metronome.apoppe.com',
 
-      id: 0,
+      id: 3,
     },
     {
       title: '4 spirited guys',
@@ -59,7 +61,7 @@ const Projects = () => {
       stack: ['HTML, CSS, JS'],
       link: 'spiritedguys.apoppe.com',
 
-      id: 3,
+      id: 4,
     },
     {
       title: 'Burger Builder',
@@ -69,7 +71,7 @@ const Projects = () => {
       stack: ['React', 'firebase'],
       link: 'burgerbuilder.apoppe.com',
 
-      id: 2,
+      id: 5,
     },
     {
       title: 'Note generator',
@@ -79,7 +81,7 @@ const Projects = () => {
       stack: ['HTML, CSS, JS'],
       link: 'notesgen.apoppe.com',
 
-      id: 1,
+      id: 6,
     },
     {
       title: 'Blackjack',
@@ -93,64 +95,21 @@ const Projects = () => {
     },
   ];
 
-  const scrollItems = (direction) => {
-    console.log('scroll ', direction);
-    var container = document.querySelector('.ProjectsContainer');
-
-    if (direction === 'right' && container.scrollLeft < container.scrollWidth) {
-      let scrollAmount = 0;
-      var slideTimer = setInterval(function () {
-        container.scrollLeft += 10;
-        scrollAmount += 10;
-        if (scrollAmount >= 700) {
-          window.clearInterval(slideTimer);
-        }
-      }, 1);
-    }
-
-    if (direction === 'left' && container.scrollLeft > 0) {
-      let scrollAmount = 0;
-      let slideTimer = setInterval(function () {
-        container.scrollLeft -= 10;
-        scrollAmount += 10;
-        if (scrollAmount >= 700) {
-          window.clearInterval(slideTimer);
-        }
-      }, 0);
-    }
-  };
   return (
-    <div className='flex flex-col justify-between flex-grow text-white pt-8 md:pt-16 pb-4 md:pb-10'>
-      <div className='text-3xl md:text-6xl border-2 md:border-4 border-testColor p-2 md:p-6 self-center'>
-        Mes <span className='text-testColor-light'>P</span>rojets
+    <div className='flex flex-col h-screen overflow-scroll justify-between flex-grow text-white pb-4 md:pb-10 pt-32'>
+      <div className='text-3xl md:text-6xl border-2 md:border-4 border-green-600 p-2 mb-8 md:p-6 mb-16 self-center'>
+        <span className='text-green-600'>M</span>es Projets
       </div>
-      <div className='ProjectsContainer overflow-scroll flex px-4 md:px-8'>
-        {projects.map((project) => (
-          <ProjectTile project={project} key={project.id} />
-        ))}
-      </div>
-      {!isMobile ? (
-        <div className='flex justify-between self-center w-1/2'>
-          <div
-            className='h-14 w-14 p-4 flex justify-center items-center border-2 border-white rounded-full text-3xl transition duration-300 ease-in-out hover:bg-white hover:text-black'
-            onClick={() => scrollItems('left')}
-          >
-            {'<-'}
-          </div>
-          <div
-            className='h-14 w-14 p-4 flex justify-center items-center border-2 border-white rounded-full text-3xl whitespace-nowrap transition duration-300 ease-in-out hover:bg-white hover:text-black'
-            onClick={() => scrollItems('right')}
-          >
-            {'->'}
-          </div>
-        </div>
-      ) : null}
-
       <div
-        className='textToHover self-center text-xl md:text-2xl'
+        className='textToHover self-center text-xl md:text-2xl mb-16'
         onClick={() => window.open('https://github.com/Poppe-A', '_blank')}
       >
-        Find them on Github !
+        Retrouvez les sur Github
+      </div>
+      <div className='tilesContainerO w-full flex flex-wrap justify-evenly px-4 md:px-8'>
+        {projects.map((project) => (
+          <ProjectTile project={project} key={project.id} index={project.id} />
+        ))}
       </div>
     </div>
   );

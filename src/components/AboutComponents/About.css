@@ -1,0 +1,42 @@
+.fixedSize {
+  height: 100vh;
+  overflow: scroll;
+}
+
+.aboutScreen {
+  min-height: 100vh;
+}
+
+.triangle {
+  display: inline-block;
+  height: 0;
+  width: 0;
+
+  border-top: 70px solid white;
+  border-right: 70px solid transparent;
+  border-left: 70px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.triangle:hover {
+  border-top: 70px solid green;
+  transition: border-color 0.2s;
+}
+
+@media (max-width: 768px) {
+  .triangle {
+    display: inline-block;
+    height: 0;
+    width: 0;
+
+    border-top: 40px solid white;
+    border-right: 40px solid transparent;
+    border-left: 40px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  .triangle:hover {
+    border-top: 40px solid green;
+    transition: border-color 0.2s;
+  }
+}

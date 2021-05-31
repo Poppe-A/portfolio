@@ -1,23 +1,9 @@
-.ProjectTile {
-  width: 450px;
-  min-width: 550px;
-  margin-right: 10%;
-  border: solid 1px white;
-}
-
 .content {
-  height: 200px;
+  height: 300px;
 }
 
 @media (max-width: 768px) {
-  .ProjectTile {
-    width: 270px;
-    min-width: 270px;
-    margin-right: 5%;
-    border: solid 1px white;
-  }
-
   .content {
-    height: 200px;
+    height: 350px;
   }
 }

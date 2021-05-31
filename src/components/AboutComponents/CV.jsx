@@ -10,9 +10,9 @@ const CV = () => {
     });
   };
   return (
-    <div className='text-center underline bg-black z-50 py-1 px-2 rounded-full shadow-xl'>
+    <div className=' flex justify-center text-center text-xl md:text-3xl bg-black z-50 mt-16 py-1 px-2 rounded-full shadow-xl'>
       <span
-        className='text-center underline bg-black shadow-xl'
+        className='textToHover text-center bg-black shadow-xl'
         onClick={handleDownload}
       >
         Télécharger mon CV
