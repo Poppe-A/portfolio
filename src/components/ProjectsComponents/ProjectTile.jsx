@@ -21,7 +21,7 @@ const ProjectTile = ({ project, index }) => {
         setIsSummary(false);
       }}
     >
-      <h3 className='text-xl text-green-600 md:text-3xl mb-2 md:mb-8'>
+      <h3 className='text-xl text-green-600 md:text-4xl mb-2 md:mb-8'>
         {project.title}
       </h3>
       <div

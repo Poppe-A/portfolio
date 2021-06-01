@@ -6,46 +6,61 @@ import { NavLink, useLocation } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
-  const [isOpen, setOpen] = useState(false);
-  const [textVisible, setTextVisible] = useState(false);
+  const [isOpen, setOpen] = useState(true);
+  const [linkVisible, setLinkVisible] = useState(true);
   //landOnPage is here to avoid having the close menu text animation on start
   const [landOnPage, setLandOnPage] = useState(true);
 
   const displayNav = () => {
-    if (!isOpen) {
-      setOpen(!isOpen);
-      setTimeout(() => {
-        if (landOnPage) setLandOnPage(false);
-        setTextVisible(!textVisible);
-      }, 50);
+    // if (!isOpen) {
+    //   setTimeout(() => {
+    //     if (landOnPage) setLandOnPage(false);
+    //     setTextVisible(!textVisible);
+    //   }, 50);
+    // } else {
+    //   if (landOnPage) setLandOnPage(false);
+    //   setTextVisible(!textVisible);
+    //   setTimeout(() => {
+    //     setOpen(false);
+    //   }, 1150);
+    // }
+  };
+
+  const toggleNavbar = () => {
+    if (isOpen) {
+      setOpen(false);
+      setTimeout(() => setLinkVisible(false), 500);
     } else {
-      setTextVisible(!textVisible);
-      setTimeout(() => {
-        setOpen(!isOpen);
-      }, 50);
+      setOpen(true);
+
+      setLinkVisible(true);
     }
   };
 
   const size = isMobile ? 30 : 48;
   return (
     <div className='header'>
-      <nav className={isOpen ? 'show' : 'noShow'}>
+      <nav
+        className={`transition-all duration-500 ${
+          isOpen ? 'w-screen' : 'w-1/12'
+        }`}
+      >
         <div className='burgerContainer'>
           <Burger
             class='burger'
             size={size}
             toggled={isOpen}
-            toggle={() => displayNav()}
+            toggle={() => toggleNavbar()}
           />
         </div>
         <ul
-          className={`${
-            landOnPage ? 'startState' : textVisible ? 'showText' : 'noShowText'
+          className={`transition-opacity duration-500 ${
+            isOpen ? 'opacity-100' : 'opacity-0'
           }`}
         >
           <li>
             <NavLink
-              className={`menuText ${
+              className={`menuText ${!isOpen ? 'cursor-default' : ''} ${
                 useLocation().pathname === '/' ? 'textSelected' : 'textToHover'
               }`}
               exact
@@ -56,7 +71,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              className={`menuText ${
+              className={`menuText ${!isOpen ? 'cursor-default' : ''} ${
                 useLocation().pathname === '/projets'
                   ? 'textSelected'
                   : 'textToHover'
@@ -69,7 +84,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              className={`menuText ${
+              className={`menuText ${!isOpen ? 'cursor-default' : ''}${
                 useLocation().pathname === '/contact'
                   ? 'textSelected'
                   : 'textToHover'

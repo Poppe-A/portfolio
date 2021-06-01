@@ -29,6 +29,16 @@ nav {
   animation-fill-mode: forwards;
 }
 
+.showText {
+  animation: navTextIn 0.4s;
+  animation-fill-mode: forwards;
+}
+
+.noShowText {
+  animation: navTextOut 0.4s;
+  animation-fill-mode: forwards;
+}
+
 nav ul {
   display: flex;
   justify-content: space-between;
@@ -39,16 +49,6 @@ nav ul {
   margin-block-end: 0;
   margin-inline-start: 0;
   margin-inline-end: 0;
-}
-
-.showText {
-  animation: navTextIn 0.4s;
-  animation-fill-mode: forwards;
-}
-
-.noShowText {
-  animation: navTextOut 0.4s;
-  animation-fill-mode: forwards;
 }
 
 li {
@@ -63,7 +63,7 @@ li {
     width: 65vw;
   }
 }
-
+/* 
 @keyframes navIn {
   from {
     width: 60px;
@@ -106,5 +106,4 @@ li {
   100% {
     opacity: 0;
     display: none;
-  }
-}
+  } */

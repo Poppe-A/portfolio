@@ -4,11 +4,14 @@ import Stack from './Stack';
 import CV from './CV';
 import MeMyselfAndI from './MeMyselfAndI';
 import './About.css';
+import { useHistory } from 'react-router';
 
 const About = () => {
   const infosRef = useRef();
   const timelineRef = useRef();
   const stackRef = useRef();
+
+  const history = useHistory();
 
   return (
     <div className='fixedSize text-white flex flex-col items-center justify-between flex-grow'>
@@ -71,6 +74,14 @@ const About = () => {
         <h1 className='text-xl md:text-4xl border-green-600 border-2 md:border-4 text-center p-3 md:p-6 mb-4 md:mt-0 text'>
           <span className={'text-green-600'}>M</span>a stack
         </h1>
+        <div className=' flex justify-center text-center text-xl md:text-3xl bg-black z-50 mt-16 py-1 px-2 rounded-full shadow-xl'>
+          <span
+            className='textToHover text-center bg-black shadow-xl'
+            onClick={() => history.push('/projets')}
+          >
+            Découvrir mes projets
+          </span>
+        </div>
         <Stack />
       </div>
 
