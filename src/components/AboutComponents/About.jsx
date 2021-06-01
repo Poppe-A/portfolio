@@ -54,8 +54,8 @@ const About = () => {
         ></div>
       </div>
       <div ref={timelineRef} className='w-full mb-12 md:mb-36'>
-        <Timeline />
         <CV />
+        <Timeline />
       </div>
 
       <div
